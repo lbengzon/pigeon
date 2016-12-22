@@ -1,0 +1,6 @@
+{% extends "ridesharing/header.html" %}
+{% block content %}
+	{% for ride in object_list %}
+		<h5>{{ ride.date|date:"Y-m-d"}}<a href="/ride/{{ride.id}}">  {{ ride.destination }}</a></h5>
+	{% endfor %}
+{% endblock %}
