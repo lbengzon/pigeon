@@ -1,0 +1,5 @@
+{% extends "ridesharing/header.html" %}
+
+{% block content %}
+<h3>Leaving on: {{ ride.date|date:"M d, Y"}}<a href="/ride/{{ride.id}}">  <br/> Destination: {{ ride.destination }}</a></h3>
+{% endblock %}

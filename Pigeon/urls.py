@@ -20,4 +20,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^ridesharing/', include('ridesharing.urls', namespace="ridesharing")),
+    url(r'^ride/', include('ridesharing.urls'))
 ]

@@ -13,7 +13,6 @@ def ride_create(request):
     #make sure form is valid
     if form.is_valid():
         instance = form.save(commit=False)
-        instance.destination = "fuck me"
         instance.save()
     #create a context to pass into the html page
     context = {
