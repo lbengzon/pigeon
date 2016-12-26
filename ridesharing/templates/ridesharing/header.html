@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Harrison Kinsley</title>
+	<title>Pigeon Ridesharing</title>
 	<meta charset="utf-8" />
 	{% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'ridesharing/css/bootstrap.min.css' %}" type = "text/css"/>
@@ -22,13 +22,14 @@
 			  <div class="col-sm-2">
 				  <br>
 				  <center>
-					<img src="{% static 'ridesharing/img/profile.jpg' %}" class="responsive-img" style='max-height:100px;' alt="face">
+				  	<!-- <img src = "logo.png" width = "296.7" height = "114.3"></img> -->
+					<img src="{% static 'ridesharing/img/logo.jpg' %}" class="responsive-img" style='max-height:100px;' alt="face">
 				  </center>
 			  </div>
 			  <div class="col-sm-10">
 				  <br>
 				  <center>
-				  <h3>Programming, Teaching, Entrepreneurship</h3>
+				  <h3>Pigeon Ridesharing</h3>
 				  </center>
 			  </div>
 		</div><hr>
@@ -44,7 +45,7 @@
 			  <ul class="nav nav-pills nav-stacked">
 				<li><a href='/'>Home</a></li>
 				<li><a href='/blog/'>Blog</a></li>
-				<li><a href="{% url 'ridesharing:ride-add' %}">AddRide</a></li>
+				<li><a href="{% url 'ridesharing:ride-add' %}">List a Ride</a></li>
 			  </ul>
 			</div> <!--well bs-sidebar affix-->
 		  </div> <!--col-sm-2-->

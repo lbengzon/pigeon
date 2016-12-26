@@ -1,6 +1,14 @@
 <html>
 <body>
-<h1>Form</h1>
+	<h1>List Ride</h1>
+		<h4> Please list the details of your trip here if you are interested in being matched up with one or more passengers. <br>
+			<br>
+			You will be compensated the following amount (per passenger) depending on your destination: <br>
+			20$ - Syracuse Airport/Utica Train station <br>
+			40$ - Greater New York City Area/Philadelphia/Greater Boston Area <br>
+			<br>
+			NOTE: While we will try our best to match you up with a passenger, we cannot guarantee that we will find you one.
+		</h4>
 <form method='POST' action=''>
     {% csrf_token %}
     {{form.as_p}}

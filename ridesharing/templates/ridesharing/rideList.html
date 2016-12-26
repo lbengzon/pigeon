@@ -1,6 +1,6 @@
 {% extends "ridesharing/header.html" %}
 {% block content %}
 	{% for ride in object_list %}
-		<h5>{{ ride.date|date:"Y-m-d"}}<a href="/ride/{{ride.id}}">  {{ ride.destination }}</a></h5>
+		<h5>Leaving on: {{ ride.date|date:"M d, Y"}}<a href="/ride/{{ride.id}}">  <br/> Destination: {{ ride.destination }}</a></h5>
 	{% endfor %}
 {% endblock %}
