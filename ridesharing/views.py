@@ -28,4 +28,4 @@ class RideForm(forms.ModelForm):
         # What model you are trying to create with this form
         model = Ride
         # What fields you want to be able to fill out
-        fields = ["destination", "date"]
+        fields = ["name", "email_address", "phone_number", "destination", "date", "time", "seats_available"]
