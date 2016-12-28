@@ -18,8 +18,12 @@ class Ride(models.Model):
     date = models.DateField(default="1996-08-06")
     time = models.TimeField(default="00:00:00")
 
-    def get_absolute_url(self):
-        return reverse("ridesharing:rideList")
-
     def __str__(self):
         return self.destination
+
+class RideRequest(models.Model):
+    name = models.CharField(max_length=140, default="")
+    email_address = models.EmailField(default="")
+    ride = models.ForeignKey(Ride, on_delete=models.CASCADE)
+
+
