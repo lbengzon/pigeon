@@ -6,7 +6,7 @@ from ridesharing.models import Ride, RideRequest
 
 # Create your views here.
 
-#this function is called when you access the /ridesharing/ride/add
+#returns the view for the ride form
 def ride_create(request):
     #create the form you want to add to the html page
     form = RideForm(request.POST or None)
@@ -21,6 +21,7 @@ def ride_create(request):
     #return the ride_form.html page passing in the context of the form
     return render(request, "ridesharing/ride_form.html", context)
 
+#this returns the view for requesting a ride
 def ride_request(request):
     form = RideRequestForm(request.POST or None)
     #make sure you can only select the rides that have been approved
@@ -28,6 +29,7 @@ def ride_request(request):
     # make sure form is valid
     if form.is_valid():
         instance = form.save(commit=False)
+        print(form.ride)
         instance.save()
     # create a context to pass into the html page
     context = {
