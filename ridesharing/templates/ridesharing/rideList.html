@@ -1,6 +1,14 @@
 {% extends "ridesharing/header.html" %}
 {% block content %}
 	{% for ride in object_list %}
-		<h5>Leaving on: <a href="/ride/{{ride.id}}">  <br/> Destination: {{ ride.destination }}</a></h5>
+		<div class="radio">
+			<label><input type = "radio" name = "ride">
+				<h5>Destination: {{ ride.destination }} <br/>
+				Date and time of departure: {{ ride.date|date:"M d, Y"}} <br/>
+				Seats available: {{ ride.seats_available }} <br/>
+				</h5>
+			</label>
+
+		</div>
 	{% endfor %}
 {% endblock %}
