@@ -1,6 +1,26 @@
 {% extends "ridesharing/header.html" %}
 {% block content %}
-	{% for ride in object_list %}
-		<h5>Leaving on: <a href="/ride/{{ride.id}}">  <br/> Destination: {{ ride.destination }}</a></h5>
-	{% endfor %}
+	<form method='GET' action="{% url 'ridesharing:ride-request' %}">
+		{% csrf_token %}
+		{% for ride in object_list %}
+
+			<label name="ride_{{ride.id}}_label"  class="control-label">
+					<h5>Destination: {{ ride.destination }} <br/>
+					Date and time of departure: {{ ride.date|date:"M d, Y"}} <br/>
+					Seats available: {{ ride.seats_available }} <br/>
+					id: {{ ride.id }} <br/>
+					</h5>
+					<button type="submit" class="form-control" name="request-ride-btn" value="{{ride.id}}">
+						Request Ride
+					</button>
+			</label>
+
+			<!--<h5>Destination: {{ ride.destination }} <br/>-->
+				<!--Date and time of departure: {{ ride.date|date:"M d, Y"}} <br/>-->
+				<!--Seats available: {{ ride.seats_available }} <br/>-->
+				<!--</h5>-->
+				<!--<input type='submit' value='Request Ride'/>-->
+		{% endfor %}
+	</form>
+
 {% endblock %}
