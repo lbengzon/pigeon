@@ -56,6 +56,7 @@ def ride_request(request):
         # make sure form is valid
         if form.is_valid():
             instance = form.save(commit=False)
+            print("=====================")
             instance.save()
             # if we want to redirect we should redirect over here
 
