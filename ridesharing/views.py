@@ -64,7 +64,7 @@ def ride_request(request):
         "form": form,
     }
     # return the ride_form.html page passing in the context of the form so the html can display the form
-    return render(request, "ridesharing/ride_form.html", context)
+    return render(request, "ridesharing/ride_request_form.html", context)
 
 
 
