@@ -19,14 +19,8 @@
 
 <body class="body" style="background-color:#f6f6f6">
 	<div class="container-fluid" style="min-height:95%; ">
-		<div class="row">
-			  <div class="col-sm-10">
-				  <br>
-				  	<!-- <img src = "logo.png" width = "296.7" height = "114.3"></img> -->
-					<img src="{% static 'ridesharing/img/logo.jpg' %}" class="responsive-img" style='max-height:100px;' alt="face" align="middle">
-			  </div>
-		</div><hr>
-<nav class="navbar navbar-default">
+
+<nav class="navbar navbar-default" style="background-color:rgb(62,71,79)">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -36,7 +30,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#"><img src="{% static 'ridesharing/img/logo2.png' %}" height="25" width= "80"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -48,12 +42,6 @@
         <li><a href="{% url 'ridesharing:ride-list' %}">View Rides</a></li>
 
       </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
