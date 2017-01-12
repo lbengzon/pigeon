@@ -78,6 +78,54 @@ class RideForm(forms.ModelForm):
         # What fields you want to be able to fill out
         fields = ["name", "email_address", "phone_number", "destination", "date", "time", "seats_available"]
 
+    name = forms.CharField(
+        label='',
+        widget=forms.TextInput(
+            attrs={'class': 'form-control', 'placeholder': 'Enter title here'}
+        ),
+    )
+
+    email_address = forms.CharField(
+        label='',
+        widget=forms.TextInput(
+            attrs={'class': 'form-control', 'placeholder': 'Enter title here'}
+        ),
+    )
+
+    phone_number = forms.CharField(
+        label='',
+        widget=forms.TextInput(
+            attrs={'class': 'form-control', 'placeholder': 'Enter title here'}
+        ),
+    )
+
+    destination = forms.CharField(
+        label='',
+        widget=forms.TextInput(
+            attrs={'class': 'form-control', 'placeholder': 'Enter title here'}
+        ),
+    )
+
+    seats_available = forms.CharField(
+        label='',
+        widget=forms.TextInput(
+            attrs={'class': 'form-control', 'placeholder': 'Enter title here'}
+        ),
+    )
+
+    date = forms.CharField(
+        label='',
+        widget=forms.TextInput(
+            attrs={'class': 'form-control', 'placeholder': 'Enter title here'}
+        ),
+    )
+
+    time = forms.CharField(
+        label='',
+        widget=forms.TextInput(
+            attrs={'class': 'form-control', 'placeholder': 'Enter title here'}
+        ),
+    )
 
 class RideRequestForm(forms.ModelForm):
     class Meta:
