@@ -3,5 +3,6 @@ from . import views
 from django.views.generic import ListView, DetailView
 
 urlpatterns = [
-    url(r'^$', views.show_home, name = 'home')
+    url(r'^$', views.show_home, name = 'home'),
+    url(r'about$', views.show_about, name='about')
 ]
