@@ -19,5 +19,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^about/$', include('about.urls', namespace="about")),
     url(r'^ridesharing/', include('ridesharing.urls', namespace="ridesharing")),
+
 ]

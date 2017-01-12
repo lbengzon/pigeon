@@ -37,7 +37,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">About Us</a></li>
+        <li><a href="{% url 'about:about' %}">About Us</a></li>
         <li><a href="{% url 'ridesharing:ride-add' %}">Create Ride</a></li>
         <li><a href="{% url 'ridesharing:ride-list' %}">View Rides</a></li>
 
