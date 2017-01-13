@@ -76,54 +76,61 @@ class RideForm(forms.ModelForm):
         # What model you are trying to create with this form
         model = Ride
         # What fields you want to be able to fill out
-        fields = ["name", "email_address", "phone_number", "destination", "date", "time", "seats_available"]
+        fields = ["first_name", "last_name", "email_address", "phone_number", "destination", "date", "time", "seats_available"]
 
-    name = forms.CharField(
+    first_name = forms.CharField(
         label='',
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Enter title here'}
+            attrs={'class': 'form-control', 'placeholder': 'First Name'}
+        ),
+    )
+
+    last_name = forms.CharField(
+        label='',
+        widget=forms.TextInput(
+            attrs={'class': 'form-control', 'placeholder': 'Last Name'}
         ),
     )
 
     email_address = forms.CharField(
         label='',
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Enter title here'}
+            attrs={'class': 'form-control', 'placeholder': 'School Email Address'}
         ),
     )
 
     phone_number = forms.CharField(
         label='',
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Enter title here'}
+            attrs={'class': 'form-control', 'placeholder': 'Phone Number'}
         ),
     )
 
     destination = forms.CharField(
         label='',
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Enter title here'}
+            attrs={'class': 'form-control', 'placeholder': 'Destination'}
         ),
     )
 
     seats_available = forms.CharField(
         label='',
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Enter title here'}
+            attrs={'class': 'form-control', 'placeholder': 'Number Of Seats Available'}
         ),
     )
 
     date = forms.CharField(
         label='',
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Enter title here'}
+            attrs={'class': 'form-control', 'placeholder': 'Date'}
         ),
     )
 
     time = forms.CharField(
         label='',
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Enter title here'}
+            attrs={'class': 'form-control', 'placeholder': 'Time'}
         ),
     )
 
