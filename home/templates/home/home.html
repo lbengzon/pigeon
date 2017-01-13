@@ -1,8 +1,29 @@
-{% extends "ridesharing/header.html" %}
+{% extends "header.html" %}
 {% block content %}
 <html>
+<!--url("https://s23.postimg.org/j4x6n4fmj/Screen_Shot_2017_01_13_at_9_52_15_PM.png")-->
+<style>
+    body {
+        background:white url(/static/home/img/homepage.png) no-repeat right top;
+		background-size:cover;
+}
+</style>
 <body>
-	<h1>THIS IS A HOME PAGE</h1>
+	<br>
+	<br>
+	<br>
+	<div class="col-md-6 col-md-offset-0">
+		<br>
+		<h1 style="color:white;font-family:Verdana">College Carpooling</h1>
+		<h5 style="color:white;font-family:Verdana">A safe and easy way to carpool home. <BR> Share empty seats with friendly schoolmates who live close to you.</h5>
+		<br>
+		<div class="btn-group" role="group" aria-label="...">
+			<button type="button" class="btn btn-default" style=" border-color: rgb(2,132,69); background-color: rgb(2,132,69); color: rgb(246,246,247); font-family: Verdana;font-size: large" href=ridesharing:ride-list>List a ride</button>
+		</div>
+		<br>
+		<br>
+		<br>
+	</div>
 </body>
 </html>
 {% endblock %}
