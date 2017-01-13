@@ -1,0 +1,11 @@
+.divider{
+    width:10px;
+    height:auto;
+    display:inline-block;
+}
+
+.btn-xl {
+    margin-top: 10px;
+    padding: 10px 40px;
+    width:100%;
+}

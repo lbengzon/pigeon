@@ -120,10 +120,9 @@ class RideForm(forms.ModelForm):
         ),
     )
 
-    date = forms.CharField(
-        label='',
-        widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Date'}
+    date = forms.DateField(
+        widget=forms.DateInput(
+            attrs={'id': 'datetimepicker12'}
         ),
     )
 

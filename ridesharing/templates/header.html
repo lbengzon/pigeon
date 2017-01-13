@@ -4,6 +4,18 @@
 	<meta charset="utf-8" />
 	{% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type = "text/css"/>
+	<link rel="stylesheet" href="{% static 'css/custom.css' %}" type = "text/css"/>
+	<script type="text/javascript" src="scripts/moment-2.4.0.js"></script>
+	<script type="text/javascript" src="scripts/bootstrap-datetimepicker.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('#datetimepicker12').datetimepicker({
+				inline: true,
+				sideBySide: true,
+				format: 'DD.MM.YYYY' /*remove this line if you want to use time as well */
+			});
+		});
+	</script>
 	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
 
 	<style type="text/css">
