@@ -20,46 +20,46 @@
 			<br>
 			<div class="row">
 				<div class="col-md-6">
-					{{form.first_name.errors}}
+					{{form.first_name.errors.as_text}}
 					{{form.first_name}}
 				</div>
 				<div class="col-md-6">
-					{{form.last_name.errors}}
+					{{form.last_name.errors.as_text}}
 					{{form.last_name}}
 				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-md-12">
-					{{form.email_address.errors}}
+					{{form.email_address.errors.as_text}}
 					{{form.email_address}}
 				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-md-12">
-					{{form.phone_number.errors}}
+					{{form.phone_number.errors.as_text}}
 					{{form.phone_number}}
 				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-md-12">
-					{{form.destination.errors}}
+					{{form.destination.errors.as_text}}
 					{{form.destination}}
 				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-md-12">
-					{{form.seats_available.errors}}
+					{{form.seats_available.errors.as_text}}
 					{{form.seats_available}}
 				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-md-12">
-					{{form.date.errors}}
+					{{form.date.errors.as_text}}
 					{{form.date}}
 				</div>
 			</div>
