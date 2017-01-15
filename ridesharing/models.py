@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse
 from django.core.validators import RegexValidator
 
 
+
 # Create your models here.
 class Ride(models.Model):
     first_name = models.CharField(max_length=140, default="")

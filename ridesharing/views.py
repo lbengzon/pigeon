@@ -3,6 +3,7 @@ from django.views.generic.edit import CreateView, UpdateView
 from django import forms
 from ridesharing.models import Ride, RideRequest
 from django.views.generic import ListView
+from django.core import validators
 from django.shortcuts import redirect
 
 
@@ -30,7 +31,6 @@ def ride_create(request):
     }
     # return the ride_form.html page passing in the context of the form
     return render(request, "ridesharing/ride_form.html", context)
-
 
 # this returns the view for requesting a ride
 # it is called when you submit the ride-request form
@@ -68,7 +68,7 @@ def ride_request(request):
     return render(request, "ridesharing/ride_request_form.html", context)
 
 
-
+NUM_SEATS = (('1', 1),('2',2))
 
 # used by the the above function for the form for posting a new ride
 class RideForm(forms.ModelForm):
@@ -92,11 +92,12 @@ class RideForm(forms.ModelForm):
         ),
     )
 
-    email_address = forms.CharField(
+    email_address = forms.EmailField(
         label='',
-        widget=forms.TextInput(
+        widget=forms.EmailInput(
             attrs={'class': 'form-control', 'placeholder': 'School Email Address'}
         ),
+        # validators=[validators.EmailValidator(message="Your message")]
     )
 
     phone_number = forms.CharField(
@@ -113,11 +114,9 @@ class RideForm(forms.ModelForm):
         ),
     )
 
-    seats_available = forms.CharField(
+    seats_available = forms.ChoiceField(choices = NUM_SEATS,
         label='',
-        widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Number Of Seats Available'}
-        ),
+        widget=forms.Select(attrs={'class': 'form-control'}),
     )
 
     date = forms.CharField(

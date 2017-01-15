@@ -14,44 +14,52 @@
 	<form method='POST' action=''>
 		{% csrf_token %}
 		{{form.id}}
+		{{form.non_field_errors}}
 
 		<div class="col-md-6 col-md-offset-4" style="background-color: lightgreen; border-radius: 10px">
 			<br>
 			<div class="row">
 				<div class="col-md-6">
+					{{form.first_name.errors}}
 					{{form.first_name}}
 				</div>
 				<div class="col-md-6">
+					{{form.last_name.errors}}
 					{{form.last_name}}
 				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-md-12">
+					{{form.email_address.errors}}
 					{{form.email_address}}
 				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-md-12">
+					{{form.phone_number.errors}}
 					{{form.phone_number}}
 				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-md-12">
+					{{form.destination.errors}}
 					{{form.destination}}
 				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-md-12">
+					{{form.seats_available.errors}}
 					{{form.seats_available}}
 				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-md-12">
+					{{form.date.errors}}
 					{{form.date}}
 				</div>
 			</div>
