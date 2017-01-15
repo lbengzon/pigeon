@@ -76,7 +76,7 @@ class RideForm(forms.ModelForm):
         # What model you are trying to create with this form
         model = Ride
         # What fields you want to be able to fill out
-        fields = ["first_name", "last_name", "email_address", "phone_number", "destination", "date", "time", "seats_available"]
+        fields = ["first_name", "last_name", "email_address", "phone_number", "destination", "date", "seats_available"]
 
     first_name = forms.CharField(
         label='',
@@ -120,16 +120,9 @@ class RideForm(forms.ModelForm):
         ),
     )
 
-    date = forms.DateField(
-        widget=forms.DateInput(
-            attrs={'id': 'datetimepicker12'}
-        ),
-    )
-
-    time = forms.CharField(
-        label='',
+    date = forms.CharField(
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Time'}
+            attrs={'class':'form-control','id': 'datetimepicker1', 'placeholder':'Date'}
         ),
     )
 

@@ -16,8 +16,7 @@ class Ride(models.Model):
     destination = models.CharField(max_length = 140)
     seats_available = models.PositiveIntegerField(default=0)
     approved = models.BooleanField(default=False)
-    date = models.DateField(default="1996-08-06")
-    time = models.TimeField(default="00:00:00")
+    date = models.DateTimeField()
 
     def __str__(self):
         return self.destination
