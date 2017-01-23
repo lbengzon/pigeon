@@ -9,3 +9,10 @@
     padding: 10px 40px;
     width:100%;
 }
+
+.reveal-if-active {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
