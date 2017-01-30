@@ -20,12 +20,17 @@ class Ride(models.Model):
     approved = models.BooleanField(default=False)
     date = models.DateTimeField(blank=True, null=True)
 
+    # def __unicode__(self):
+    #     return u'%s %s' % (self.origin, self.destination)
+
     def __str__(self):
-        return self.destination
+
+        return self.origin + " --> " + self.destination + " | " + self.date.strftime("%B %d, %Y, %I:%M %p")
 
 class RideRequest(models.Model):
     name = models.CharField(max_length=140, default="")
     email_address = models.EmailField(default="")
     ride = models.ForeignKey(Ride, on_delete=models.CASCADE)
+
 
 

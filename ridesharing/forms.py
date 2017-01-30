@@ -116,6 +116,10 @@ class RideForm(forms.ModelForm):
 
 
 class RideRequestForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(RideRequestForm, self).__init__(*args, **kwargs)
+        self.fields['ride'].label_from_instance = lambda obj: "%s %s" % (obj.origin, obj.destination)
+
     class Meta:
         model = RideRequest
         fields = '__all__'
