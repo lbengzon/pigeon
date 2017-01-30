@@ -20,12 +20,29 @@ def list_rides(request):
 def ride_create(request):
     # create the form you want to add to the html page
     form = RideForm(request.POST or None)
+    if request.method == 'POST':
+        # if 'my_real_submit_button' not in form.data:
+        #     print("1")
+        #     form = ReverseRideForm(request.POST or None)
+        # else:
+        #     # make sure form is valid
+        #     print("2")
+        # print("========================")
+        # print(form.instance.first_name)
+        # print("========================")
+        # print(form.instance)
+        # print("========================")
+        # print(form)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            print("form is valid")
+            instance.save()
+            # return HttpResponseRedirect('/thanks/')  # Redirect after POST
 
-    # make sure form is valid
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save()
-    # create a context to pass into the html page
+            # return redirect('/accounts/loggedin/locations/all/')
+        else:
+            print("Form not valid")
+        # create a context to pass into the html page
     context = {
         "form": form,
     }

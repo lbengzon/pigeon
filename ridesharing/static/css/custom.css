@@ -1,5 +1,5 @@
 .divider{
-    width:10px;
+    width:50px;
     height:auto;
     display:inline-block;
 }
@@ -10,9 +10,11 @@
     width:100%;
 }
 
-.reveal-if-active {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
+#origin_contents{
+    display : none;
+}
+
+#destination_contents{
+    /*display : none;*/
 }
 
