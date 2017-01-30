@@ -4,20 +4,20 @@
 buttons-->
 <script>
 	window.onload = loadOriginOrDestination;
-	//this function is called when a input of type radio with the name departure changes value
+	//this function is called when a input of type radio with the name direction changes value
 	$(document).ready(function(){
-		$('input[type="radio"][name="departure"]').on('change',function(){
+		$('input[type="radio"][name="direction"]').on('change',function(){
 //		var ThisIt = $(this);
 
 		//if the button radio button being checked is the destination button
-		if(document.getElementById('id_departure_0').checked){
+		if(document.getElementById('id_direction_0').checked){
 		   // when is leaving from colgate
 			//hide the origin and show the destination
 		   $('#origin_contents').hide();
 		   $('#destination_contents').show();
 		   $("[name='destination']").val($("[name='origin']").val());
 		   $("[name='origin']").val("");
-		}else if(document.getElementById('id_departure_1').checked){
+		}else if(document.getElementById('id_direction_1').checked){
 		   // when is going to colgate
 		    $('#origin_contents').show();
 		    $('#destination_contents').hide();
@@ -29,18 +29,18 @@ buttons-->
 
 	//this function will be called once all the html has been loaded
 	//it will show or hide the destination or origin depending on
-	//which value was selected
+	//which value was selected.
 	function loadOriginOrDestination(){
 		//if the button radio button being checked is the destination button
-		if(!document.getElementById('id_departure_0').checked && !document.getElementById('id_departure_1').checked){
-		    document.getElementById('id_departure_0').checked = true;
+		if(!document.getElementById('id_direction_0').checked && !document.getElementById('id_direction_1').checked){
+		    document.getElementById('id_direction_0').checked = true;
 		}
-		else if(document.getElementById('id_departure_0').checked){
+		else if(document.getElementById('id_direction_0').checked){
 		   // when is leaving from colgate
 			//hide the origin and show the destination
 		   $('#origin_contents').hide();
 		   $('#destination_contents').show();
-		}else if(document.getElementById('id_departure_1').checked){
+		}else if(document.getElementById('id_direction_1').checked){
 		   // when is going to colgate
 		    $('#origin_contents').show();
 		    $('#destination_contents').hide();
@@ -93,7 +93,7 @@ buttons-->
 
 		<div class="row">
 			<div class="col-md-12">
-				{{form.departure}}
+				{{form.direction}}
 				<div id="origin_contents">
 					{{form.origin.errors.as_text}}
 					{{form.origin}}

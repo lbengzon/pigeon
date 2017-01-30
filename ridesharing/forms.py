@@ -8,7 +8,7 @@ NUM_SEATS = (('1', 1),('2',2))
 class RideForm(forms.ModelForm):
     #This field is not in the model. I add this field to the form to add the radio buttons
     #which determines whether colgate is the destination or origin.
-    departure = forms.ChoiceField(
+    direction = forms.ChoiceField(
         choices=[(x, x) for x in ['Leaving from colgate', 'Going to Colgate']],
         widget=forms.RadioSelect())
 
