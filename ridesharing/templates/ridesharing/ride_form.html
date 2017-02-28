@@ -52,14 +52,12 @@ buttons-->
 <html>
 <body>
 	<h1>List Ride</h1>
-		<h4> Please list the details of your trip here if you are interested in being matched up with one or more passengers. <br>
+		<body>
+		<p style="padding: 0 40px; font-size: 18px"> Please list the details of your trip here if you are interested in being matched up with one or more passengers. </p>
+			<p style="padding: 0 40px; font-size: 18px">Once a passenger requests to get in on your ride, we will pass on your contact details so that the passenger can contact you. From there, it is up to you to negotiate the terms of the ride.</p>
 			<br>
-			You will be compensated the following amount (per passenger) depending on your destination: <br>
-			20$ - Syracuse Airport/Utica Train station <br>
-			40$ - Greater New York City Area/Philadelphia/Greater Boston Area <br>
-			<br>
-			NOTE: While we will try our best to match you up with a passenger, we cannot guarantee that we will find you one.
-		</h4>
+			<p style="padding: 0 40px; font-size: 18px">NOTE: While we will try our best to match you up with a passenger, we cannot guarantee that we will find you one.</p>
+		</body>
 	<form method='POST' action='' class="col-md-6 col-md-offset-7" style="background-color: lightgreen; border-radius: 10px">
 		{% csrf_token %}
 		{{form.id}}
