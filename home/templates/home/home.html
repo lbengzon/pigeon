@@ -22,15 +22,14 @@
 		<div class="row">
 
 			<div class="btn-group" role="group" aria-label="...">
-				<button type="button" class="btn btn-xl" style=" border-color: rgb(2,132,69); background-color: rgb(2,132,69); color: rgb(246,246,247); font-family: Verdana;font-size: large" href=ridesharing:ride-list>List a ride</button>
+				<button type="button" class="btn btn-xl" style=" border-color: rgb(2,132,69); background-color: rgb(2,132,69); color: rgb(246,246,247); font-family: Verdana;font-size: large" onclick="window.location.href='{% url 'ridesharing:ride-add' %}'">List a ride</button>
 			</div>
 			<div class="divider"></div>
 			<div class="divider"></div>
 			<div class="btn-group" role="group" aria-label="...">
-				<button type="button" class="btn btn-xl" style=" border-color: rgb(2,132,69); background-color: rgb(2,132,69); color: rgb(246,246,247); font-family: Verdana;font-size: large" href=ridesharing:ride-list>Find a ride</button>
+				<button type="button" class="btn btn-xl" style=" border-color: rgb(2,132,69); background-color: rgb(2,132,69); color: rgb(246,246,247); font-family: Verdana;font-size: large" onclick="window.location.href='{% url 'ridesharing:ride-list' %}'">Find a ride</button>
 			</div>
 		</div>
-
 		<br>
 		<br>
 		<br>
