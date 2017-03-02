@@ -123,6 +123,13 @@ buttons-->
 		</div>
 		<br>
 		<div class="row">
+			<div class="col-md-12">
+				<input type="checkbox" required id="termsConditions" value="termsConditions"> I accept the
+				<a target="_blank" href="{% url 'ridesharing:terms-conditions' %}">Terms and Conditions</a>
+			</div>
+		</div>
+		<br>
+		<div class="row">
 			<div class="col-md-4 col-md-offset-0">
 				<button type='submit' style ='background-color: #2ba6cb;' name="my_real_submit_button" class="btn btn-default" value='Create Ride'>
 					Create Ride

@@ -14,5 +14,6 @@ urlpatterns = [
     url(r'^(?P<pk>\d+)$', DetailView.as_view(model = Ride,
                                             template_name = 'ridesharing/ride.html')),
     url(r'request$', views.ride_request, name='ride-request'),
-    url(r'request/request-success$', views.request_success, name='request-success')
+    url(r'request/request-success$', views.request_success, name='request-success'),
+    url(r'terms-conditions$', views.terms_and_conditions, name='terms-conditions')
 ]
