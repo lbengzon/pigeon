@@ -1,7 +1,7 @@
 {% extends "header.html" %}
 {% block content %}
 <h1>Available Rides</h1>
-	<form method='GET' action=''>
+	<form method='GET' action="{% url 'ridesharing:ride-request' %}">
 		{% csrf_token %}
 		{% for ride in object_list %}
 
