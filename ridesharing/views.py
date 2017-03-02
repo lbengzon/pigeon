@@ -94,4 +94,4 @@ def request_success(request):
 
 def terms_and_conditions(request):
     #TODO: add the actual terms and conditions page
-    pass
+    return render(request, 'ridesharing/terms_conditions.html')
