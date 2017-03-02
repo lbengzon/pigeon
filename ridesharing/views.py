@@ -6,6 +6,7 @@ from django.views.generic import ListView
 from django.core import validators
 from django.shortcuts import redirect
 from forms import *
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 
@@ -37,7 +38,7 @@ def ride_create(request):
             instance = form.save(commit=False)
             print("form is valid")
             instance.save()
-            # return HttpResponseRedirect('/thanks/')  # Redirect after POST
+            return HttpResponseRedirect('/ridesharing/add/add-success')  # Redirect after POST
 
             # return redirect('/accounts/loggedin/locations/all/')
         else:
@@ -76,6 +77,7 @@ def ride_request(request):
             print("=====================")
             instance.save()
             # if we want to redirect we should redirect over here
+            return HttpResponseRedirect('/ridesharing/request/request-success')
 
     # create a context to pass into the html page
     context = {
@@ -84,4 +86,8 @@ def ride_request(request):
     # return the ride_form.html page passing in the context of the form so the html can display the form
     return render(request, "ridesharing/ride_request_form.html", context)
 
+def add_success(request):
+    return render(request, 'ridesharing/add_success.html')
 
+def request_success(request):
+    return render(request, 'ridesharing/request-success.html')

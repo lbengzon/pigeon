@@ -10,7 +10,9 @@ urlpatterns = [
     #                             , template_name = 'ridesharing/rideList.html')),
     url(r'^$', views.list_rides, name = 'ride-list'),
     url(r'add$', views.ride_create, name='ride-add'),
+    url(r'add/add-success$', views.add_success, name='add-success'),
     url(r'^(?P<pk>\d+)$', DetailView.as_view(model = Ride,
                                             template_name = 'ridesharing/ride.html')),
-    url(r'request$', views.ride_request, name='ride-request')
+    url(r'request$', views.ride_request, name='ride-request'),
+    url(r'request/request-success$', views.request_success, name='request-success')
 ]
