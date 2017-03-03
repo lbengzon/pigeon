@@ -1,82 +1,95 @@
-
 <head>
-	<title>Pigeon Carpooling</title>
-	<meta charset="utf-8" />
-	{% load static %}
-	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css"/>
+    <title>Pigeon Carpooling</title>
+    <meta charset="utf-8"/>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css"/>
 
-	<link rel="stylesheet" href="{% static 'css/bootstrap-datetimepicker.css' %}" type="text/css"/>
-	<!--<link href="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.0.1-p7/css/bootstrap.min.css" rel="stylesheet" >-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datetimepicker.css' %}" type="text/css"/>
+    <!--<link href="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.0.1-p7/css/bootstrap.min.css" rel="stylesheet" >-->
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-	<script type="text/javascript" src="/static/js/jquery-3.1.1.js"></script>
-	<script type="text/javascript" src="/static/js/bootstrap.js"></script>
-	<script type="text/javascript" src="/static/js/moment.js"></script>
-	<script type="text/javascript" src="/static/js/bootstrap-datetimepicker.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.0.1-p7/js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-		$(function () {
-			$('#datetimepicker1').datetimepicker({
-			    format: 'YYYY-MM-DD hh:mm'
-			});
-		});
-	</script>
+    <script type="text/javascript" src="/static/js/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/js/moment.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.0.1-p7/js/bootstrap.min.js"></script>
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript" src="/static/js/bootstrap-datetimepicker.min.js"></script>
 
 
 
-	<link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css"/>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                format: 'YYYY-MM-DD hh:mm'
+            });
+        });
+        $(function () {
+            $('.date-picker').datepicker();
+        });
+    </script>
 
-	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
 
-	<style type="text/css">
-		html,
-		body {
-		  height:100%
-		}
-	</style>
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style type="text/css">
+        html,
+        body {
+            height: 100%
+        }
+    </style>
 
 </head>
 
 <body class="body" style="background-color:#f6f6f6">
-	<div class="container-fluid" style="min-height:95%; ">
+<div class="container-fluid" style="min-height:95%; ">
 
-<nav class="navbar navbar-default">
-  <!--<div class="container-fluid">-->
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/home/" style="padding-left: 30px;"><img src="{% static 'ridesharing/img/logo2.png' %}" height="40" width= "140"></a>
+    <nav class="navbar navbar-default">
+        <!--<div class="container-fluid">-->
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/home/" style="padding-left: 30px;"><img
+                    src="{% static 'ridesharing/img/logo2.png' %}" height="40" width="140"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'home:home' %}" style="padding-left: 30px;padding-right: 30px;">Home <span
+                        class="sr-only">(current)</span></a></li>
+                <li><a href="{% url 'home:about' %}" style="padding-left: 30px;padding-right: 30px;">About</a></li>
+                <li><a href="{% url 'ridesharing:ride-add' %}" style="padding-left: 30px;padding-right: 30px;">Drive</a>
+                </li>
+                <li><a href="{% url 'ridesharing:ride-list' %}" style="padding-left: 30px;padding-right: 30px;">Ride</a>
+                </li>
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+        <!--</div>&lt;!&ndash; /.container-fluid &ndash;&gt;-->
+    </nav>
+    <div class="row">
+
+    </div> <!--col-sm-2-->
+    <div class="">
+
+        <div class='container-fluid'>
+            <!--<br><br>-->
+            {% block content %}
+            {% endblock %}
+        </div>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="{% url 'home:home' %}" style="padding-left: 30px;padding-right: 30px;">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="{% url 'home:about' %}" style="padding-left: 30px;padding-right: 30px;">About</a></li>
-        <li><a href="{% url 'ridesharing:ride-add' %}" style="padding-left: 30px;padding-right: 30px;">Drive</a></li>
-        <li><a href="{% url 'ridesharing:ride-list' %}" style="padding-left: 30px;padding-right: 30px;">Ride</a></li>
-
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  <!--</div>&lt;!&ndash; /.container-fluid &ndash;&gt;-->
-</nav>
-		<div class="row">
-
-		  </div> <!--col-sm-2-->
-		  <div class="col-sm-10">
-
-			<div class='container-fluid'>
-			<!--<br><br>-->
-			   {% block content %}
-			   {% endblock %}
-			</div>
-		  </div>
-		</div>
-	</div>
+</div>
+</div>
 
 </body>
 

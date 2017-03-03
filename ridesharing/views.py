@@ -12,6 +12,11 @@ from django.http import HttpResponseRedirect
 
 #the view for the the list of approved rides
 def list_rides(request):
+    origin = request.GET.get("origin_search")
+    destination = request.GET.get("destination_search")
+    date = request.GET.get("date_search")
+    #results =
+    print(origin)
     #The return the list view of ride objects that have been approved sorted by the earliest date
     return ListView.as_view(queryset=Ride.objects.filter(approved=True).order_by("-date"),
                                 template_name='ridesharing/rideList.html')(request)

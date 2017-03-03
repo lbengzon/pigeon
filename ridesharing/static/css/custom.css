@@ -7,7 +7,6 @@
 .btn-xl {
     margin-top: 10px;
     padding: 10px 40px;
-    width:100%;
 }
 
 
@@ -34,4 +33,118 @@
 
 #destination_contents{
     /*display : none;*/
+}
+
+/*The dark green font*/
+.green_font{
+    color: #1E392A;
+}
+
+/*The regular green button*/
+.green_button{
+    margin:0;
+    background-color: #3CC47C;
+    border:0;
+    color: #ffffff;
+}
+
+/*this is the white box around the forms*/
+.form-container{
+    background-color: #FFFFFF;
+}
+
+/*This is what holds the rides in the ride list page*/
+.ride-container{
+        display:inline-flex;
+
+    background-color: #FFFFFF;
+    padding: 200px;
+    margin:10px;
+    width:100%;
+}
+
+.ride-location-container{
+    display:inline-flex;
+    width:300px;
+    margin:0;
+        vertical-align: bottom;
+
+}
+
+.ride-time-container{
+    display:inline-flex;
+    width:200px;
+        margin:0;
+        vertical-align: bottom;
+
+}
+
+.ride-passengers-container{
+    display:inline-flex;
+    width:200px;
+        margin:0;
+    vertical-align: bottom;
+}
+
+.ride-request-button-container{
+    display:inline-flex;
+    width:200px;
+        margin:0;
+    vertical-align: bottom;
+    horizontal-align: right;
+}
+
+.flex-container {
+  padding: 0;
+  list-style: none;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: table;
+}
+
+.nowrap  {
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+.wrap    {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.wrap-reverse         {
+  -webkit-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+
+.flex-item {
+  /*background: tomato;*/
+  padding: 5px;
+  /*width: 100px;*/
+  /*height: 100px;*/
+  margin: 10px;
+  /*line-height: 100px;*/
+    vertical-align: bottom;
+    display:inline-flex;
+  /*font-weight: bold;*/
+  /*font-size: 2em;*/
+  /*text-align: center;*/
+}
+
+
+
+/*large button*/
+.btn-xl{
+    padding-top:20px;
+    padding-bottom:20px;
+    font-size: large;
+}
+
+.body{
+    font-family: "Gotham SSm A", "Gotham SSm B", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 1.5rem;
 }

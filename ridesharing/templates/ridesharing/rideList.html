@@ -1,28 +1,67 @@
 {% extends "header.html" %}
 {% block content %}
-<h1>Available Rides</h1>
-	<form method='GET' action="{% url 'ridesharing:ride-request' %}">
-		{% csrf_token %}
-		{% for ride in object_list %}
+<style>
+    body {
+        background: white url(/static/home/img/greenpattern.png) left top;
+    }
+</style>
+<div style="width: 100%; padding-left: 5%; padding-right:5%;">
+    <form method="GET" action="" class="form-container">
+        <div class="flex-container wrap" >
+            <li class="flex-item">
+                        <input class="form-control" id="origin_search" name="origin_search" placeholder="Origin" type="text">
 
-			<label name="ride_{{ride.id}}_label"  class="control-label">
-					<h4>Origin: {{ ride.origin }} <br/>
-					Destination: {{ ride.destination }} <br/>
-					Date of departure: {{ ride.date|date:"M d, Y"}} <br/>
-					Time of departure: {{ride.time}} <br/>
-					Seats available: {{ ride.seats_available }} <br/>
-					</h4>
-					<button type="submit" class="btn btn-default" name="request-ride-btn" value="{{ride.id}}">
-						Request Ride
-					</button>
-			</label>
+            </li>
+            <li class="flex-item">
+                        <input class="form-control" id="destination_search" name="destination_search" placeholder="Destination" type="text">
 
-			<!--<h5>Destination: {{ ride.destination }} <br/>-->
-				<!--Date and time of departure: {{ ride.date|date:"M d, Y"}} <br/>-->
-				<!--Seats available: {{ ride.seats_available }} <br/>-->
-				<!--</h5>-->
-				<!--<input type='submit' value='Request Ride'/>-->
-		{% endfor %}
-	</form>
+            </li>
+            <li class="flex-item">
+                        <input class="form-control date-picker" id="date-picker" name="date_search" placeholder="Date" type="text">
+            </li>
+            <li class="flex-item">
+                        <button type="submit" class="btn green_button" name="request-ride-btn" value="{{ride.id}}">
+                Search
+            </button>
+            </li>
+        </div>
+
+    </form>
+
+    <h1>Available Rides</h1>
+    <form method='GET' action="{% url 'ridesharing:ride-request' %}">
+        {% csrf_token %}
+        {% for ride in object_list %}
+
+        <label name="ride_{{ride.id}}_label" class="ride-container flex-container wrap">
+            <li class="flex-item ride-location-container">
+                <h2 style="margin:0;">
+                    {{ ride.origin }} &#x2192 {{ ride.destination }}
+                </h2>
+            </li>
+            <li class="ride-time-container flex-item">
+                    {{ ride.date|date:"M d, Y"}} {{ride.date.time}}
+            </li>
+            <li class="ride-passengers-container flex-item ">
+                <span>
+                     <!--<small style="vertical-align: bottom; display:inline-flex; margin: 0">seats available</small> <br/></h1>-->
+                    <h1 style="margin: 0">{{ ride.seats_available }}</h1> <small>Seats Available</small>
+                </span>
+            </li>
+            <li class="ride-request-button-container flex-item">
+            <button type="submit" class="btn btn-xl green_button" name="request-ride-btn" value="{{ride.id}}">
+                Request Ride
+            </button>
+            </li>
+        </label>
+
+        <!--<h5>Destination: {{ ride.destination }} <br/>-->
+        <!--Date and time of departure: {{ ride.date|date:"M d, Y"}} <br/>-->
+        <!--Seats available: {{ ride.seats_available }} <br/>-->
+        <!--</h5>-->
+        <!--<input type='submit' value='Request Ride'/>-->
+        {% endfor %}
+    </form>
+</div>
 
 {% endblock %}
