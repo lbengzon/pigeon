@@ -39,8 +39,8 @@
 <body class="body" style="background-color:#f6f6f6">
 	<div class="container-fluid" style="min-height:95%; ">
 
-<nav class="navbar navbar-default" style="background-color:rgb(62,71,79)">
-  <div class="container-fluid">
+<nav class="navbar navbar-default">
+  <!--<div class="container-fluid">-->
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -49,20 +49,20 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><img src="{% static 'ridesharing/img/logo2.png' %}" height="25" width= "80"></a>
+      <a class="navbar-brand" href="/home/" style="padding-left: 30px;"><img src="{% static 'ridesharing/img/logo2.png' %}" height="40" width= "140"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="{% url 'home:home' %}">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="{% url 'home:about' %}">About</a></li>
-        <li><a href="{% url 'ridesharing:ride-add' %}">Drive</a></li>
-        <li><a href="{% url 'ridesharing:ride-list' %}">Ride</a></li>
+        <li><a href="{% url 'home:home' %}" style="padding-left: 30px;padding-right: 30px;">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="{% url 'home:about' %}" style="padding-left: 30px;padding-right: 30px;">About</a></li>
+        <li><a href="{% url 'ridesharing:ride-add' %}" style="padding-left: 30px;padding-right: 30px;">Drive</a></li>
+        <li><a href="{% url 'ridesharing:ride-list' %}" style="padding-left: 30px;padding-right: 30px;">Ride</a></li>
 
       </ul>
     </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+  <!--</div>&lt;!&ndash; /.container-fluid &ndash;&gt;-->
 </nav>
 		<div class="row">
 
