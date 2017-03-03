@@ -15,10 +15,25 @@ def list_rides(request):
     origin = request.GET.get("origin_search")
     destination = request.GET.get("destination_search")
     date = request.GET.get("date_search")
-    #results =
+    results = Ride.objects.filter(approved=True)
+    if(origin != None):
+        results = results.filter(origin__contains=origin)
+    if(destination != None):
+        results = results.filter(destination__contains=destination)
+    if(date != None):
+        list = date.split("/")
+
+        if(len(list) > 2):
+            day = int(list[1])
+            month = int(list[0])
+            year = int(list[2])
+            print(day)
+            results = results.filter(date__day=day, date__month=month, date__year=year)
     print(origin)
+    print(results)
+
     #The return the list view of ride objects that have been approved sorted by the earliest date
-    return ListView.as_view(queryset=Ride.objects.filter(approved=True).order_by("-date"),
+    return ListView.as_view(queryset=results.order_by("-date"),
                                 template_name='ridesharing/rideList.html')(request)
 
 
