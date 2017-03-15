@@ -7,19 +7,19 @@
 </style>
 <div style="width: 100%; padding-left: 5%; padding-right:5%;">
     <form method="GET" action="" class="form-container">
-        <div class="flex-container wrap" >
-            <li class="flex-item">
+        <div class="flex-container wrap" style="width: 100%;">
+            <li class="col-sm-3 flex-item" style="padding:0; margin:2%">
                         <input class="form-control" id="origin_search" name="origin_search" placeholder="Origin" type="text">
 
             </li>
-            <li class="flex-item">
+            <li class="flex-item col-sm-3 " style="padding:0; margin:2%">
                         <input class="form-control" id="destination_search" name="destination_search" placeholder="Destination" type="text">
 
             </li>
-            <li class="flex-item">
+            <li class="col-sm-3 flex-item" style="padding:0; margin:2%">
                         <input class="form-control date-picker" id="date-picker" name="date_search" placeholder="Date" type="text">
             </li>
-            <li class="flex-item">
+            <li class="col-sm-1 flex-item" style="padding:0; margin:2%">
                         <button type="submit" class="btn green_button" name="request-ride-btn" value="{{ride.id}}">
                 Search
             </button>
@@ -33,26 +33,24 @@
         {% csrf_token %}
         {% for ride in object_list %}
 
-        <label name="ride_{{ride.id}}_label" class="ride-container flex-container wrap">
-            <li class="flex-item ride-location-container">
-                <h2 style="margin:0;">
+        <label name="ride_{{ride.id}}_label" class="ride-container flex-container wrap" style="vertical-align: baseline">
+            <div class="ride-location-container col-sm-3 flex-item">
+
                     {{ ride.origin }} &#x2192 {{ ride.destination }}
-                </h2>
-            </li>
-            <li class="ride-time-container flex-item">
+
+            </div>
+            <div class="ride-time-container col-sm-2 flex-item" style="vertical-align: baseline">
                     {{ ride.date|date:"M d, Y"}} {{ride.date.time}}
-            </li>
-            <li class="ride-passengers-container flex-item ">
-                <span>
+            </div>
+            <div class="col-sm-2 flex-item ride-passengers-container" style="vertical-align: baseline">
                      <!--<small style="vertical-align: bottom; display:inline-flex; margin: 0">seats available</small> <br/></h1>-->
-                    <h1 style="margin: 0">{{ ride.seats_available }}</h1> <small>Seats Available</small>
-                </span>
-            </li>
-            <li class="ride-request-button-container flex-item">
-            <button type="submit" class="btn btn-xl green_button" name="request-ride-btn" value="{{ride.id}}">
+                    {{ ride.seats_available }} Seats Available
+            </div>
+            <div class="ride-request-button-container  col-sm-2 flex-item" style="vertical-align: baseline">
+            <button type="submit" class="btn green_button" name="request-ride-btn" value="{{ride.id}}" style="width:100%; height: 100%;">
                 Request Ride
             </button>
-            </li>
+            </div>
         </label>
 
         <!--<h5>Destination: {{ ride.destination }} <br/>-->

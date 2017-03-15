@@ -58,40 +58,43 @@
         display:inline-flex;
 
     background-color: #FFFFFF;
-    padding: 200px;
     margin:10px;
-    width:100%;
+    width:95%;
 }
 
 .ride-location-container{
     display:inline-flex;
-    width:300px;
     margin:0;
-        vertical-align: bottom;
+    font-size: large;
+    vertical-align: bottom;
+        line-height: 100%;
 
 }
 
 .ride-time-container{
     display:inline-flex;
-    width:200px;
+    /*width:200px;*/
         margin:0;
         vertical-align: bottom;
+        line-height: 100%;
 
 }
 
 .ride-passengers-container{
     display:inline-flex;
-    width:200px;
+    /*width:200px;*/
         margin:0;
     vertical-align: bottom;
+
 }
 
 .ride-request-button-container{
     display:inline-flex;
-    width:200px;
-        margin:0;
+    /*width:200px;*/
+    margin:0;
     vertical-align: bottom;
     horizontal-align: right;
+    line-height: 100%;
 }
 
 .flex-container {
@@ -123,10 +126,10 @@
 
 .flex-item {
   /*background: tomato;*/
-  padding: 5px;
+  /*padding: 5px;*/
   /*width: 100px;*/
   /*height: 100px;*/
-  margin: 10px;
+  margin: 2%;
   /*line-height: 100px;*/
     vertical-align: bottom;
     display:inline-flex;
@@ -147,4 +150,8 @@
 .body{
     font-family: "Gotham SSm A", "Gotham SSm B", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 1.5rem;
+}
+
+.navbar-header{
+    height: 70px;
 }
