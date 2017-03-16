@@ -27,6 +27,15 @@
     margin: 10px;
     font-size: 16px;
 }
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #89e8b8;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #FFFFFF;
+}
+
 #origin_contents{
     display : none;
 }
@@ -51,6 +60,7 @@
 /*this is the white box around the forms*/
 .form-container{
     background-color: #FFFFFF;
+    margin:10px;
 }
 
 /*This is what holds the rides in the ride list page*/
