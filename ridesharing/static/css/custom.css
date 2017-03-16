@@ -52,6 +52,7 @@
 /*The regular green button*/
 .green_button{
     margin:0;
+    margin-bottom:10px;
     background-color: #3CC47C;
     border:0;
     color: #ffffff;
