@@ -29,7 +29,7 @@
     </form>
 
     <h1>Available Rides</h1>
-    <form method='GET' action="{% url 'ridesharing:ride-request' %}">
+    <form method='GET' action="{% url 'ridesharing:ride-request' %}" class="form-container">
         {% csrf_token %}
         {% for ride in object_list %}
 

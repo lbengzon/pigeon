@@ -25,7 +25,7 @@ SECRET_KEY = '0!vdr8snwoa6(=+2o^m=i5s!7g$nra1lyb-k&#uavpm)%bw@1-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ridepigeon.com', '162.243.120.6', 'localhost', '127.0.0.1']
 
 
 # Application definition
